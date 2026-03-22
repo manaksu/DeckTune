@@ -44,31 +44,18 @@ html,body{min-height:100%;background:var(--bg);color:var(--ink);font-family:'Out
 .hero-title em{font-style:italic;color:var(--muted)}
 .hero-sub{font-size:13px;color:var(--muted);max-width:480px;line-height:1.65}
 
-/* ── Search card ── */
-.search-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-2xl);box-shadow:var(--sh-sm);overflow:hidden;margin-bottom:20px}
-.search-inner{padding:18px 20px}
-.search-lbl{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hint);margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.search-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
-.search-wrap{position:relative}
-.search-input{width:100%;padding:12px 44px 12px 42px;border-radius:var(--r-lg);border:1px solid var(--border);background:var(--surface2);color:var(--ink);font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;outline:none;transition:all .15s}
-.search-input:focus{border-color:var(--border3);background:var(--surface);box-shadow:0 0 0 3px rgba(0,0,0,.04)}
-.search-input::placeholder{color:var(--hint);font-weight:400}
-.s-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--hint);width:16px;height:16px;pointer-events:none}
-.s-spin{position:absolute;right:14px;top:50%;transform:translateY(-50%);display:none}
-.s-spin.show{display:block}
-.ring{width:18px;height:18px;border:2px solid var(--border2);border-top-color:var(--ink);border-radius:50%;animation:spin .7s linear infinite}
-.steam-dd{display:none;border-top:1px solid var(--border)}
-.steam-dd.show{display:block}
-.sdi{display:flex;align-items:center;gap:12px;padding:11px 20px;border-bottom:1px solid var(--border);transition:background .12s}
-.sdi:last-child{border-bottom:none}
-.sdi.clickable{cursor:pointer}
-.sdi.clickable:hover{background:var(--surface2)}
-.sdi-art{width:64px;height:30px;border-radius:5px;object-fit:cover;background:var(--surface3);flex-shrink:0;border:1px solid var(--border)}
-.sdi-name{font-size:13px;font-weight:600;flex:1;color:var(--ink)}
-.sdi-add{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 10px;border:1px solid var(--border2);border-radius:6px;white-space:nowrap;background:var(--surface2);color:var(--ink2)}
-.sdi-add.added{color:var(--hint);border-color:var(--border)}
-.s-hint{padding:12px 20px;font-size:12px;color:var(--hint);font-family:'JetBrains Mono',monospace;text-align:center}
-.s-manual-add{color:var(--ink);text-decoration:underline;cursor:pointer;font-weight:600}
+/* ── Add game card ── */
+.add-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-2xl);box-shadow:var(--sh-sm);padding:20px 22px;margin-bottom:22px}
+.add-card-lbl{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hint);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.add-card-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
+.add-row{display:flex;gap:10px}
+.add-input{flex:1;padding:12px 16px;border-radius:var(--r-lg);border:1px solid var(--border);background:var(--surface2);color:var(--ink);font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;outline:none;transition:all .15s}
+.add-input:focus{border-color:var(--border3);background:var(--surface);box-shadow:0 0 0 3px rgba(0,0,0,.04)}
+.add-input::placeholder{color:var(--hint);font-weight:400}
+.add-btn{padding:12px 22px;border-radius:var(--r-lg);border:none;background:var(--ink);color:#fff;font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:opacity .14s;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.add-btn:hover{opacity:.85}
+.add-btn:disabled{opacity:.4;cursor:not-allowed}
+.add-hint{font-size:11px;color:var(--hint);margin-top:8px;font-family:'JetBrains Mono',monospace}
 
 /* ── Library ── */
 .lib-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px}
@@ -80,36 +67,32 @@ html,body{min-height:100%;background:var(--bg);color:var(--ink);font-family:'Out
 .game-list{display:flex;flex-direction:column;gap:6px}
 .gbar{display:flex;align-items:center;border-radius:var(--r-xl);border:1px solid var(--border);background:var(--surface);overflow:hidden;cursor:pointer;transition:all .15s;box-shadow:var(--sh-sm);animation:qIn .3s ease both}
 .gbar:hover{border-color:var(--border2);box-shadow:var(--sh)}
-.gbar-art{width:112px;height:52px;flex-shrink:0;overflow:hidden;background:var(--surface3)}
-.gbar-art img{width:100%;height:100%;object-fit:cover;display:block}
-.gbar-art .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:20px}
+.gbar-icon{width:52px;height:52px;flex-shrink:0;background:var(--surface3);display:flex;align-items:center;justify-content:center;font-size:22px;border-right:1px solid var(--border)}
 .gbar-info{flex:1;padding:0 14px;min-width:0}
 .gbar-name{font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .gbar-meta{font-size:10px;color:var(--hint);margin-top:2px;font-family:'JetBrains Mono',monospace}
 .gbar-right{display:flex;align-items:center;gap:8px;padding-right:14px;flex-shrink:0}
-.mode-count{font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--hint)}
-.mode-count b{color:var(--ink2)}
 .demand-pill{padding:3px 9px;border-radius:100px;font-size:9px;font-family:'JetBrains Mono',monospace;font-weight:700;border:1px solid}
 .dh{background:var(--danger-s);color:var(--danger);border-color:var(--danger-b)}
 .dm{background:var(--warn-s);color:var(--warn);border-color:var(--warn-b)}
 .dl{background:var(--ok-s);color:var(--ok);border-color:var(--ok-b)}
-.gen-row{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:var(--r-xl);border:1px solid var(--border);background:var(--surface2);margin-bottom:6px}
-.gen-ring{width:14px;height:14px;border:2px solid var(--border2);border-top-color:var(--ink);border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
-.gen-txt{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted)}
+.gen-row{display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:var(--r-xl);border:1px solid var(--border);background:var(--surface);margin-bottom:6px;animation:qIn .2s ease}
+.gen-ring{width:16px;height:16px;border:2px solid var(--border2);border-top-color:var(--ink);border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
+.gen-info{flex:1}
+.gen-name{font-size:13px;font-weight:600;color:var(--ink)}
+.gen-status{font-size:11px;color:var(--hint);font-family:'JetBrains Mono',monospace;margin-top:2px}
 .empty-st{text-align:center;padding:56px 24px}
 .empty-glyph{font-family:'Playfair Display',serif;font-size:56px;color:var(--border);line-height:1;margin-bottom:14px;font-style:italic}
 .empty-tx{font-size:16px;font-weight:700;margin-bottom:5px}
-.empty-sb{font-size:13px;color:var(--muted);max-width:300px;margin:0 auto;line-height:1.6}
+.empty-sb{font-size:13px;color:var(--muted);max-width:320px;margin:0 auto;line-height:1.6}
 
 /* ── Settings view ── */
 .settings-panel{display:none}
 .settings-panel.vis{display:block}
 .gh{display:flex;align-items:center;border-radius:var(--r-2xl);overflow:hidden;border:1px solid var(--border);background:var(--surface);margin-bottom:20px;box-shadow:var(--sh-sm)}
-.gh-art{width:200px;height:94px;flex-shrink:0;overflow:hidden;background:var(--surface3)}
-.gh-art img{width:100%;height:100%;object-fit:cover;display:block}
-.gh-art .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:36px}
+.gh-icon{width:80px;height:80px;flex-shrink:0;background:var(--surface3);display:flex;align-items:center;justify-content:center;font-size:36px;border-right:1px solid var(--border)}
 .gh-info{flex:1;padding:16px 18px}
-.gh-name{font-size:22px;font-weight:800;letter-spacing:-.4px;line-height:1.1}
+.gh-name{font-size:20px;font-weight:800;letter-spacing:-.4px;line-height:1.1}
 .gh-meta{font-size:11px;color:var(--hint);margin-top:5px;font-family:'JetBrains Mono',monospace}
 .gh-btns{display:flex;gap:7px;padding-right:18px;align-items:center;flex-shrink:0}
 .btn-back{padding:8px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-lg);color:var(--muted);font-size:12px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;white-space:nowrap;transition:all .12s}
@@ -117,6 +100,7 @@ html,body{min-height:100%;background:var(--bg);color:var(--ink);font-family:'Out
 .btn-del{padding:7px 12px;border-radius:var(--r-lg);border:1px solid var(--danger-b);background:var(--danger-s);color:var(--danger);font-size:11px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif}
 .btn-regen{padding:7px 12px;border-radius:var(--r-lg);border:1px solid var(--border);background:var(--surface2);color:var(--muted);font-size:11px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .12s;display:flex;align-items:center;gap:5px}
 .btn-regen:hover{color:var(--ink);border-color:var(--border3)}
+.btn-regen:disabled{opacity:.4;cursor:not-allowed}
 
 /* ── Mode tabs ── */
 .mode-tabs{display:flex;gap:0;border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;background:var(--surface2);margin-bottom:18px}
@@ -124,9 +108,9 @@ html,body{min-height:100%;background:var(--bg);color:var(--ink);font-family:'Out
 .mtab:last-child{border-right:none}
 .mtab.active{background:var(--surface);color:var(--ink);box-shadow:var(--sh-sm)}
 .mtab-icon{font-size:16px}
-.mtab-label{font-size:10px;font-weight:700;letter-spacing:.02em}
+.mtab-label{font-size:10px;font-weight:700}
 
-/* ── Mode detail card ── */
+/* ── Mode detail ── */
 .mode-detail{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-2xl);box-shadow:var(--sh);overflow:hidden;animation:qIn .2s ease}
 .md-header{padding:18px 22px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .md-left{display:flex;align-items:center;gap:12px}
@@ -135,7 +119,6 @@ html,body{min-height:100%;background:var(--bg);color:var(--ink);font-family:'Out
 .md-desc{font-size:12px;color:var(--muted);margin-top:2px}
 .md-fps-badge{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;line-height:1;color:var(--ink)}
 .md-fps-unit{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--hint);margin-left:3px;vertical-align:bottom;line-height:3.2}
-.md-body{padding:0}
 .md-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:1px solid var(--border)}
 .md-stat{padding:16px 20px;border-right:1px solid var(--border)}
 .md-stat:last-child{border-right:none}
@@ -155,14 +138,48 @@ html,body{min-height:100%;background:var(--bg);color:var(--ink);font-family:'Out
 .stab-label span:last-child{font-weight:700;color:var(--ink)}
 .stab-track{height:6px;background:var(--surface3);border-radius:3px;overflow:hidden;border:1px solid var(--border)}
 .stab-fill{height:100%;background:var(--ink);border-radius:3px;transition:width .6s cubic-bezier(.34,1.3,.64,1)}
-.md-footer{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.md-
+/* ── Search ── */
+.search-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-2xl);box-shadow:var(--sh-sm);overflow:hidden;margin-bottom:22px}
+.search-inner{padding:18px 20px}
+.search-lbl{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hint);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.search-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
+.search-wrap{position:relative}
+.search-input{width:100%;padding:12px 44px 12px 42px;border-radius:var(--r-lg);border:1px solid var(--border);background:var(--surface2);color:var(--ink);font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;outline:none;transition:all .15s}
+.search-input:focus{border-color:var(--border3);background:var(--surface);box-shadow:0 0 0 3px rgba(0,0,0,.04)}
+.search-input::placeholder{color:var(--hint);font-weight:400}
+.s-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--hint);width:16px;height:16px;pointer-events:none}
+.s-spin{position:absolute;right:14px;top:50%;transform:translateY(-50%);display:none}
+.s-spin.show{display:block}
+.search-hint{font-size:11px;color:var(--hint);margin-top:8px;font-family:'JetBrains Mono',monospace}
+/* Dropdown */
+.game-dd{display:none;border-top:1px solid var(--border);max-height:420px;overflow-y:auto}
+.game-dd.show{display:block}
+.gdi{display:flex;align-items:center;gap:12px;padding:10px 20px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .12s}
+.gdi:last-child{border-bottom:none}
+.gdi:hover{background:var(--surface2)}
+.gdi-art{width:80px;height:45px;border-radius:6px;object-fit:cover;background:var(--surface3);flex-shrink:0;border:1px solid var(--border)}
+.gdi-art-ph{width:80px;height:45px;border-radius:6px;background:var(--surface3);flex-shrink:0;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px}
+.gdi-info{flex:1;min-width:0}
+.gdi-name{font-size:13px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gdi-meta{font-size:10px;color:var(--hint);font-family:'JetBrains Mono',monospace;margin-top:3px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.gdi-rating{padding:2px 6px;border-radius:4px;background:var(--ok-s);color:var(--ok);border:1px solid var(--ok-b);font-size:9px;font-weight:700}
+.gdi-add{padding:5px 12px;border-radius:var(--r-lg);background:var(--ink);color:#fff;font-size:11px;font-weight:700;font-family:'Outfit',sans-serif;white-space:nowrap;flex-shrink:0}
+.gdi-added{padding:5px 12px;border-radius:var(--r-lg);background:var(--surface3);color:var(--hint);font-size:11px;font-weight:600;font-family:'JetBrains Mono',monospace;white-space:nowrap;flex-shrink:0}
+.dd-hint{padding:14px 20px;font-size:12px;color:var(--hint);font-family:'JetBrains Mono',monospace;text-align:center}
+.dd-manual{color:var(--ink);font-weight:600;cursor:pointer;text-decoration:underline;margin-left:6px}
+/* add-card becomes simple fallback */
+.add-card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-xl);padding:14px 18px;margin-bottom:22px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.add-card-txt{font-size:12px;color:var(--muted);flex:1}
+.add-card-txt b{color:var(--ink)}
+
+footer{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .md-bat{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
 .md-bat b{color:var(--ink);font-weight:700}
-.md-actions{display:flex;gap:8px}
 .btn-copy{padding:8px 16px;border-radius:var(--r-lg);border:1px solid var(--border);background:var(--surface2);color:var(--muted);font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .12s;display:flex;align-items:center;gap:5px}
 .btn-copy:hover{color:var(--ink);border-color:var(--border3)}
 
-/* ── Overview grid (all 5 modes mini) ── */
+/* ── Overview grid ── */
 .overview-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}
 @media(max-width:700px){.overview-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:480px){.overview-grid{grid-template-columns:repeat(2,1fr)}}
@@ -174,6 +191,47 @@ html,body{min-height:100%;background:var(--bg);color:var(--ink);font-family:'Out
 .ov-fps{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--ink2)}
 .ov-fps-u{font-size:9px;color:var(--hint)}
 .ov-tdp{font-size:10px;color:var(--hint);margin-top:3px;font-family:'JetBrains Mono',monospace}
+
+/* ── Generating overlay on settings ── */
+.gen-overlay{display:none;position:absolute;inset:0;background:rgba(242,242,240,.85);border-radius:var(--r-2xl);z-index:10;align-items:center;justify-content:center;flex-direction:column;gap:12px;backdrop-filter:blur(2px)}
+.gen-overlay.show{display:flex}
+.gen-overlay-txt{font-size:13px;color:var(--muted);font-family:'JetBrains Mono',monospace}
+.settings-wrap{position:relative}
+
+
+/* ── Search ── */
+.search-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-2xl);box-shadow:var(--sh-sm);overflow:hidden;margin-bottom:22px}
+.search-inner{padding:18px 20px}
+.search-lbl{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hint);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.search-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
+.search-wrap{position:relative}
+.search-input{width:100%;padding:12px 44px 12px 42px;border-radius:var(--r-lg);border:1px solid var(--border);background:var(--surface2);color:var(--ink);font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;outline:none;transition:all .15s}
+.search-input:focus{border-color:var(--border3);background:var(--surface);box-shadow:0 0 0 3px rgba(0,0,0,.04)}
+.search-input::placeholder{color:var(--hint);font-weight:400}
+.s-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--hint);width:16px;height:16px;pointer-events:none}
+.s-spin{position:absolute;right:14px;top:50%;transform:translateY(-50%);display:none}
+.s-spin.show{display:block}
+.search-hint{font-size:11px;color:var(--hint);margin-top:8px;font-family:'JetBrains Mono',monospace}
+/* Dropdown */
+.game-dd{display:none;border-top:1px solid var(--border);max-height:420px;overflow-y:auto}
+.game-dd.show{display:block}
+.gdi{display:flex;align-items:center;gap:12px;padding:10px 20px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .12s}
+.gdi:last-child{border-bottom:none}
+.gdi:hover{background:var(--surface2)}
+.gdi-art{width:80px;height:45px;border-radius:6px;object-fit:cover;background:var(--surface3);flex-shrink:0;border:1px solid var(--border)}
+.gdi-art-ph{width:80px;height:45px;border-radius:6px;background:var(--surface3);flex-shrink:0;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px}
+.gdi-info{flex:1;min-width:0}
+.gdi-name{font-size:13px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gdi-meta{font-size:10px;color:var(--hint);font-family:'JetBrains Mono',monospace;margin-top:3px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.gdi-rating{padding:2px 6px;border-radius:4px;background:var(--ok-s);color:var(--ok);border:1px solid var(--ok-b);font-size:9px;font-weight:700}
+.gdi-add{padding:5px 12px;border-radius:var(--r-lg);background:var(--ink);color:#fff;font-size:11px;font-weight:700;font-family:'Outfit',sans-serif;white-space:nowrap;flex-shrink:0}
+.gdi-added{padding:5px 12px;border-radius:var(--r-lg);background:var(--surface3);color:var(--hint);font-size:11px;font-weight:600;font-family:'JetBrains Mono',monospace;white-space:nowrap;flex-shrink:0}
+.dd-hint{padding:14px 20px;font-size:12px;color:var(--hint);font-family:'JetBrains Mono',monospace;text-align:center}
+.dd-manual{color:var(--ink);font-weight:600;cursor:pointer;text-decoration:underline;margin-left:6px}
+/* add-card becomes simple fallback */
+.add-card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-xl);padding:14px 18px;margin-bottom:22px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.add-card-txt{font-size:12px;color:var(--muted);flex:1}
+.add-card-txt b{color:var(--ink)}
 
 footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);font-size:11px;color:var(--hint);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-family:'JetBrains Mono',monospace}
 </style>
@@ -196,24 +254,39 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);font-
 <div class="page">
   <div class="hero">
     <div class="hero-eyebrow">Steam Deck Settings Optimizer</div>
-    <div class="hero-title">Five modes,<br><em>one perfect game.</em></div>
-    <div class="hero-sub">Search any game, get AI-optimized settings across 5 play modes — Stable FPS, Performance, Visual Fidelity, Balanced and Battery Saver. Save your library and switch modes instantly.</div>
+    <div class="hero-title">Any game,<br><em>five perfect modes.</em></div>
+    <div class="hero-sub">Type any game name — AI instantly generates 5 optimized play modes: Stable FPS, Performance, Visual Fidelity, Balanced and Battery Saver.</div>
   </div>
 
   <!-- Library view -->
   <div id="libraryView">
+
+    <!-- Search card -->
     <div class="search-card">
       <div class="search-inner">
         <div class="search-lbl">Search &amp; add a game</div>
         <div class="search-wrap">
           <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input class="search-input" id="searchInput" placeholder="Search Steam store — e.g. Elden Ring, Hades, Baldur's Gate 3…">
-          <div class="s-spin" id="sSpin"><div class="ring"></div></div>
+          <input class="search-input" id="searchInput" placeholder="Search any game — GTA, Elden Ring, Hades, Cyberpunk…" autocomplete="off">
+          <div class="s-spin" id="sSpin"><div class="ring" style="width:18px;height:18px"></div></div>
         </div>
+        <div class="search-hint">350,000+ games · cover art · ratings · AI-optimized settings</div>
       </div>
-      <div class="steam-dd" id="steamDd"></div>
+      <div class="game-dd" id="gameDd"></div>
+    </div>
+    <!-- Manual fallback -->
+    <div class="add-card" id="manualCard" style="display:none">
+      <div class="add-card-txt">Can't find your game? <b>Type the name below</b> and Claude will generate settings for it.</div>
+      <div style="display:flex;gap:8px;width:100%">
+        <input class="add-input" id="gameInput" placeholder="e.g. My Custom Game…" autocomplete="off" style="flex:1;padding:9px 14px;border-radius:var(--r-lg);border:1px solid var(--border);background:var(--surface);font-family:'Outfit',sans-serif;font-size:13px;outline:none">
+        <button class="add-btn" id="addBtn" onclick="handleManualAdd()" style="padding:9px 18px;border-radius:var(--r-lg);border:none;background:var(--ink);color:#fff;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;cursor:pointer">Add</button>
+      </div>
     </div>
 
+    <!-- Generating rows -->
+    <div id="genRows"></div>
+
+    <!-- Library -->
     <div class="lib-header">
       <div class="lib-title">My Library</div>
       <div class="filters-row">
@@ -224,306 +297,254 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);font-
         <button class="fb" onclick="setF('low',this)">Easy</button>
       </div>
     </div>
-    <div id="genRow" style="display:none" class="gen-row">
-      <div class="gen-ring"></div>
-      <div class="gen-txt" id="genTxt">Generating settings…</div>
-    </div>
     <div class="game-list" id="gameList"></div>
     <div class="empty-st" id="emptyState">
       <div class="empty-glyph">∅</div>
       <div class="empty-tx">Library is empty</div>
-      <div class="empty-sb">Search any game above to add it — AI generates 5 optimized play modes automatically.</div>
+      <div class="empty-sb">Type any game above and hit Generate — AI creates 5 optimized play modes in seconds.</div>
     </div>
   </div>
 
   <!-- Settings view -->
   <div class="settings-panel" id="settingsView">
     <div class="gh" id="ghEl"></div>
-    <!-- Mode tabs -->
     <div class="mode-tabs" id="modeTabs"></div>
-    <!-- Active mode detail -->
-    <div id="modeDetail"></div>
-    <!-- Overview of all 5 modes -->
+    <div class="settings-wrap">
+      <div id="modeDetail"></div>
+      <div class="gen-overlay" id="genOverlay">
+        <div class="ring" style="width:24px;height:24px;border-width:3px"></div>
+        <div class="gen-overlay-txt">Generating AI settings…</div>
+      </div>
+    </div>
     <div class="overview-grid" id="overviewGrid"></div>
   </div>
 </div>
 
 <script>
-/* ─────────────────────────────────────────
-   State
-───────────────────────────────────────── */
 let LIBRARY = [];
 let activeF = 'all';
 let selGame = null;
 let activeMode = 'balanced';
-let searchDebounce = null;
 
 const MODES = [
-  { key:'stable',    icon:'🎯', label:'Stable FPS',      desc:'Rock-solid 40fps — no drops, no stutters' },
-  { key:'balanced',  icon:'⚖️', label:'Balanced',         desc:'Best all-round experience — smooth & good-looking' },
-  { key:'perf',      icon:'⚡', label:'Performance',      desc:'Maximum framerate — competitive & fast' },
-  { key:'visual',    icon:'🎨', label:'Visual Fidelity',  desc:'Best image quality — full resolution, max detail' },
-  { key:'battery',   icon:'🔋', label:'Battery Saver',    desc:'Extended playtime — 30fps, low TDP' },
+  { key:'stable',   icon:'🎯', label:'Stable FPS',     desc:'Rock-solid 40fps — no drops, no stutters' },
+  { key:'balanced', icon:'⚖️', label:'Balanced',        desc:'Best all-round — smooth & great looking' },
+  { key:'perf',     icon:'⚡', label:'Performance',     desc:'Maximum framerate — competitive & fast' },
+  { key:'visual',   icon:'🎨', label:'Visual Fidelity', desc:'Best image quality — full res, max detail' },
+  { key:'battery',  icon:'🔋', label:'Battery Saver',   desc:'Extended playtime — 30fps, low TDP' },
 ];
 
-/* ─────────────────────────────────────────
-   Helpers
-───────────────────────────────────────── */
 function dlbl(d){ return d==='high'?'Heavy':d==='med'?'Medium':'Easy'; }
+function batteryHours(tdp){ return Math.round(40*0.7/tdp*10)/10; }
 
-function makeArt(steamId, icon, iCls, pCls){
-  if(!steamId) return `<div class="${pCls}">${icon||'🎮'}</div>`;
-  return `<img class="${iCls}" src="https://cdn.akamai.steamstatic.com/steam/apps/${steamId}/capsule_616x353.jpg"
-    onerror="this.src='https://cdn.akamai.steamstatic.com/steam/apps/${steamId}/header.jpg';this.onerror=function(){this.style.display='none';this.nextSibling.style.display='flex'}" alt="">
-    <div class="${pCls}" style="display:none">${icon||'🎮'}</div>`;
-}
+/* ── RAWG Search ── */
+let searchDebounce = null;
 
-function batteryHours(tdp){
-  // Steam Deck 40Wh battery; assume ~70% efficiency
-  return Math.round(40 * 0.7 / tdp * 10) / 10;
-}
-
-/* ─────────────────────────────────────────
-   Search
-───────────────────────────────────────── */
 document.getElementById('searchInput').addEventListener('input', function(){
   const v = this.value.trim();
-  const dd = document.getElementById('steamDd');
+  const dd = document.getElementById('gameDd');
   const spin = document.getElementById('sSpin');
   clearTimeout(searchDebounce);
   if(!v){ dd.classList.remove('show'); return; }
   spin.classList.add('show');
   searchDebounce = setTimeout(async () => {
     try {
-      const res = await fetch('/api/steam?term=' + encodeURIComponent(v));
-      const data = res.ok ? await res.json() : { items: [] };
-      const items = (data.items || []).slice(0, 8);
+      const res = await fetch('/api/games?term=' + encodeURIComponent(v));
+      if(!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      const items = data.items || [];
+
       if(!items.length){
-        // No results — offer manual add
-        dd.innerHTML = '<div class="s-hint">No Steam results found. <span class="s-manual-add" data-name="'+v.replace(/"/g,'&quot;')+'">Add "'+v+'" manually →</span></div>';
-        dd.classList.add('show');
-        const manualBtn = dd.querySelector('.s-manual-add');
-        if(manualBtn) manualBtn.addEventListener('click', () => {
-          dd.classList.remove('show');
-          document.getElementById('searchInput').value = '';
-          addGame(null, manualBtn.dataset.name);
-        });
-        spin.classList.remove('show');
-        return;
+        dd.innerHTML = '<div class="dd-hint">No results found.<span class="dd-manual" onclick="showManual()">Add manually →</span></div>';
+        dd.classList.add('show'); spin.classList.remove('show'); return;
       }
+
       dd.innerHTML = items.map(it => {
-        const inLib = LIBRARY.some(g => g.steamId === it.id);
-        return '<div class="sdi'+(inLib?'':' clickable')+'" data-id="'+it.id+'" data-name="'+it.name.replace(/"/g,'&quot;')+'">'+
-          '<img class="sdi-art" src="https://cdn.akamai.steamstatic.com/steam/apps/'+it.id+'/capsule_231x87.jpg" onerror="this.style.display='none'" alt="">'+
-          '<span class="sdi-name">'+it.name+'</span>'+
-          '<span class="sdi-add'+(inLib?' added':''>'+(inLib?'✓ Saved':'+ Add'))+'</span>'+
-          '</div>';
+        const inLib = LIBRARY.some(g => g.rawgId === it.id);
+        const art = it.image
+          ? `<img class="gdi-art" src="${it.image}" onerror="this.style.display='none'" alt="">`
+          : `<div class="gdi-art-ph">🎮</div>`;
+        const rating = it.rating ? `<span class="gdi-rating">${it.rating} MC</span>` : '';
+        const meta = [it.genre, it.released, rating].filter(Boolean);
+        return `<div class="gdi${inLib?'':' gdi-clickable'}" data-id="${it.id}"
+            data-name="${it.name.replace(/"/g,'&quot;')}"
+            data-genre="${(it.genre||'').replace(/"/g,'&quot;')}"
+            data-demand="${it.demand||'med'}"
+            data-image="${(it.image||'').replace(/"/g,'&quot;')}">
+          ${art}
+          <div class="gdi-info">
+            <div class="gdi-name">${it.name}</div>
+            <div class="gdi-meta">${it.genre||''}${it.released?' · '+it.released:''}${it.rating?' · <span class="gdi-rating">'+it.rating+' MC</span>':''}</div>
+          </div>
+          ${inLib
+            ? '<span class="gdi-added">✓ Saved</span>'
+            : '<span class="gdi-add">+ Add</span>'}
+        </div>`;
       }).join('');
-      dd.querySelectorAll('.clickable').forEach(el => {
+
+      dd.querySelectorAll('.gdi-clickable').forEach(el => {
         el.addEventListener('click', () => {
           dd.classList.remove('show');
           document.getElementById('searchInput').value = '';
-          addGame(+el.dataset.id, el.dataset.name);
+          addGame(+el.dataset.id, el.dataset.name, el.dataset.genre, el.dataset.demand, el.dataset.image);
         });
       });
       dd.classList.add('show');
     } catch(e) {
-      // Show manual add option on any error
-      dd.innerHTML = '<div class="s-hint">Search unavailable. <span class="s-manual-add" data-name="'+v.replace(/"/g,'&quot;')+'">Add "'+v+'" manually →</span></div>';
+      dd.innerHTML = '<div class="dd-hint">Search unavailable.<span class="dd-manual" onclick="showManual()">Add manually →</span></div>';
       dd.classList.add('show');
-      const manualBtn = dd.querySelector('.s-manual-add');
-      if(manualBtn) manualBtn.addEventListener('click', () => {
-        dd.classList.remove('show');
-        document.getElementById('searchInput').value = '';
-        addGame(null, manualBtn.dataset.name);
-      });
       console.error('Search error:', e);
     }
     spin.classList.remove('show');
-  }, 400);
+  }, 380);
 });
 
 document.addEventListener('click', e => {
-  if(!e.target.closest('.search-wrap') && !e.target.closest('.steam-dd'))
-    document.getElementById('steamDd').classList.remove('show');
+  if(!e.target.closest('.search-card'))
+    document.getElementById('gameDd').classList.remove('show');
 });
 
-/* ─────────────────────────────────────────
-   Add game + AI generate all 5 modes
-───────────────────────────────────────── */
-async function addGame(steamId, name){
-  const existing = LIBRARY.find(g => g.steamId === steamId);
+function showManual(){
+  document.getElementById('manualCard').style.display = 'flex';
+  document.getElementById('manualCard').style.flexWrap = 'wrap';
+  document.getElementById('gameDd').classList.remove('show');
+  document.getElementById('gameInput').focus();
+}
+
+function handleManualAdd(){
+  const input = document.getElementById('gameInput');
+  const name = input.value.trim();
+  if(!name) return;
+  input.value = '';
+  document.getElementById('manualCard').style.display = 'none';
+  addGame(null, name, 'Game', 'med', null);
+}
+
+/* ── Add game ── */
+async function addGame(rawgId, name, genre, demand, image){
+  const existing = LIBRARY.find(g =>
+    (rawgId && g.rawgId === rawgId) ||
+    g.name.toLowerCase() === name.toLowerCase()
+  );
   if(existing){ openGame(existing.id); return; }
 
-  // Show loading row
-  const gr = document.getElementById('genRow');
-  document.getElementById('genTxt').textContent = `Generating 5 play modes for ${name}…`;
-  gr.style.display = 'flex';
+  const btn = document.getElementById('addBtn');
+  if(btn) btn.disabled = true;
+
+  const rowId = 'gen_' + Date.now();
+  const gameId = 'g_' + Date.now();
+  const genRows = document.getElementById('genRows');
+  const row = document.createElement('div');
+  row.className = 'gen-row'; row.id = rowId;
+  row.innerHTML = `<div class="gen-ring"></div><div class="gen-info"><div class="gen-name">${name}</div><div class="gen-status">Generating 5 play modes…</div></div>`;
+  genRows.prepend(row);
   document.getElementById('emptyState').style.display = 'none';
 
+  const defaultModes = {
+    stable:   {fps:40,fpsSteady:98,tdp:10,gpu:1200,res:'800p',scale:'FSR2 Quality',refresh:40,limit:40,notes:'Optimizing…'},
+    balanced: {fps:50,fpsSteady:90,tdp:12,gpu:1400,res:'800p',scale:'FSR2 Balanced',refresh:60,limit:50,notes:'Optimizing…'},
+    perf:     {fps:60,fpsSteady:82,tdp:15,gpu:1600,res:'720p',scale:'FSR2 Performance',refresh:60,limit:60,notes:'Optimizing…'},
+    visual:   {fps:40,fpsSteady:94,tdp:14,gpu:1600,res:'1280x800',scale:'None',refresh:40,limit:40,notes:'Optimizing…'},
+    battery:  {fps:30,fpsSteady:99,tdp:7,gpu:900,res:'800p',scale:'FSR2 Ultra Performance',refresh:30,limit:30,notes:'Optimizing…'},
+  };
+  const game = {
+    id:gameId, rawgId:rawgId||null, name,
+    image:image||null, icon:'🎮',
+    genre:genre||'Game', demand:demand||'med', type:'aaa',
+    modes:defaultModes, ready:false
+  };
+  LIBRARY.push(game);
+  renderList();
+
   try {
-    const modes = await aiGenAllModes(name);
-    const game = {
-      id: 'g_' + Date.now(),
-      steamId, name,
-      icon: '🎮',
-      genre: modes.genre || 'Game',
-      demand: modes.demand || 'med',
-      type: modes.type || 'aaa',
-      modes: modes.modes
-    };
-    LIBRARY.push(game);
-    gr.style.display = 'none';
+    const result = await aiGenAllModes(name, genre);
+    const g = LIBRARY.find(x=>x.id===gameId);
+    if(g){
+      g.modes=result.modes; g.genre=result.genre||g.genre;
+      g.demand=result.demand||g.demand; g.type=result.type||g.type; g.ready=true;
+    }
+    row.remove();
     renderList();
-    // Auto-open the game settings
-    openGame(game.id);
+    if(selGame && selGame.id===gameId){
+      selGame=g;
+      document.getElementById('genOverlay').classList.remove('show');
+      renderSettings(g);
+    }
   } catch(e) {
-    gr.style.display = 'none';
-    document.getElementById('genTxt').textContent = '';
-    alert('Could not generate settings for ' + name + '. Check your API connection and try again.');
+    const g=LIBRARY.find(x=>x.id===gameId);
+    if(g){g.ready=true;}
+    row.innerHTML=`<div style="color:var(--danger);font-size:13px;font-weight:600">${name}</div><div style="font-size:11px;color:var(--hint);font-family:'JetBrains Mono',monospace;margin-top:2px">AI unavailable — default settings applied</div>`;
+    setTimeout(()=>row.remove(),3000);
     renderList();
   }
+  if(btn) btn.disabled=false;
 }
 
-/* ─────────────────────────────────────────
-   AI — generate all 5 modes in one call
-───────────────────────────────────────── */
+/* ── AI generate all 5 modes ── */
 async function aiGenAllModes(name){
   const prompt = `You are a Steam Deck hardware expert. Generate optimized settings for "${name}" across 5 play modes.
-
-Return ONLY valid JSON (no markdown, no extra text):
-{
-  "genre": "Action RPG",
-  "demand": "high",
-  "type": "aaa",
-  "modes": {
-    "stable": {
-      "fps": 40,
-      "fpsSteady": 98,
-      "tdp": 10,
-      "gpu": 1200,
-      "res": "800p",
-      "scale": "FSR2 Quality",
-      "refresh": 40,
-      "limit": 40,
-      "notes": "Rock-solid 40fps — TDP locked low, half-rate shading if needed"
-    },
-    "balanced": {
-      "fps": 50,
-      "fpsSteady": 90,
-      "tdp": 12,
-      "gpu": 1400,
-      "res": "800p",
-      "scale": "FSR2 Balanced",
-      "refresh": 60,
-      "limit": 50,
-      "notes": "Best all-round — good visuals and smooth gameplay"
-    },
-    "perf": {
-      "fps": 60,
-      "fpsSteady": 82,
-      "tdp": 15,
-      "gpu": 1600,
-      "res": "720p",
-      "scale": "FSR2 Performance",
-      "refresh": 60,
-      "limit": 60,
-      "notes": "Max framerate — reduced resolution to hit 60fps"
-    },
-    "visual": {
-      "fps": 40,
-      "fpsSteady": 94,
-      "tdp": 14,
-      "gpu": 1600,
-      "res": "1280x800",
-      "scale": "None",
-      "refresh": 40,
-      "limit": 40,
-      "notes": "Full native resolution — max detail, no upscaling"
-    },
-    "battery": {
-      "fps": 30,
-      "fpsSteady": 99,
-      "tdp": 7,
-      "gpu": 900,
-      "res": "800p",
-      "scale": "FSR2 Ultra Performance",
-      "refresh": 30,
-      "limit": 30,
-      "notes": "Extended battery life — 6+ hours possible"
-    }
-  }
-}
-
-Rules:
-- stable: prioritize 98%+ frame stability at 40fps, low TDP 8-11W
-- balanced: 45-55fps target, mid TDP 11-13W, good visuals
-- perf: 55-60fps target, max TDP 15W, may reduce resolution
-- visual: native or near-native resolution, no or minimal upscaling, 40fps is fine
-- battery: 30fps hard cap, TDP 5-8W, aggressive upscaling
-- All fps, tdp, gpu, refresh, limit must be numbers. res and scale are strings.
-- notes: one practical tip specific to this game and mode (max 15 words)
-- demand: "high" for AAA/demanding, "med" for most games, "low" for indie/2D`;
+Return ONLY valid JSON (no markdown):
+{"genre":"Action RPG","demand":"high","type":"aaa","modes":{"stable":{"fps":40,"fpsSteady":98,"tdp":10,"gpu":1200,"res":"800p","scale":"FSR2 Quality","refresh":40,"limit":40,"notes":"One specific tip for this game"},"balanced":{"fps":50,"fpsSteady":90,"tdp":12,"gpu":1400,"res":"800p","scale":"FSR2 Balanced","refresh":60,"limit":50,"notes":"One specific tip"},"perf":{"fps":60,"fpsSteady":82,"tdp":15,"gpu":1600,"res":"720p","scale":"FSR2 Performance","refresh":60,"limit":60,"notes":"One specific tip"},"visual":{"fps":40,"fpsSteady":94,"tdp":14,"gpu":1600,"res":"1280x800","scale":"None","refresh":40,"limit":40,"notes":"One specific tip"},"battery":{"fps":30,"fpsSteady":99,"tdp":7,"gpu":900,"res":"800p","scale":"FSR2 Ultra Performance","refresh":30,"limit":30,"notes":"One specific tip"}}}
+Rules: stable=98%+ frame stability at 40fps TDP 8-11W. balanced=45-55fps TDP 11-13W. perf=55-60fps TDP 15W. visual=native res no upscaling 40fps. battery=30fps TDP 5-8W aggressive upscaling. demand: high=AAA demanding, med=most games, low=indie/2D. Notes must be specific to this game (max 12 words).`;
 
   const res = await fetch('/api/claude', {
-    method: 'POST',
-    headers: {'Content-Type':'application/json'},
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
     body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 800,
-      messages: [{ role:'user', content: prompt }]
+      model:'claude-sonnet-4-20250514',
+      max_tokens:800,
+      messages:[{role:'user',content:prompt}]
     })
   });
   const data = await res.json();
-  if(data.error) throw new Error(data.error.message || JSON.stringify(data.error));
-  const raw = (data.content?.[0]?.text || '').replace(/```json|```/g,'').trim();
+  if(data.error) throw new Error(data.error.message||JSON.stringify(data.error));
+  const raw = (data.content?.[0]?.text||'').replace(/```json|```/g,'').trim();
   return JSON.parse(raw);
 }
 
-/* ─────────────────────────────────────────
-   Re-generate settings for existing game
-───────────────────────────────────────── */
+/* ── Re-generate ── */
 async function regenGame(id){
-  const g = LIBRARY.find(x => x.id === id);
+  const g = LIBRARY.find(x=>x.id===id);
   if(!g) return;
   const btn = document.getElementById('regenBtn');
-  if(btn){ btn.disabled=true; btn.textContent='Generating…'; }
-  try {
-    const modes = await aiGenAllModes(g.name);
-    g.modes = modes.modes;
-    g.genre = modes.genre || g.genre;
-    g.demand = modes.demand || g.demand;
+  if(btn){btn.disabled=true;btn.textContent='Generating…';}
+  document.getElementById('genOverlay').classList.add('show');
+  try{
+    const result = await aiGenAllModes(g.name);
+    g.modes=result.modes; g.genre=result.genre||g.genre; g.demand=result.demand||g.demand;
     renderSettings(g);
-  } catch(e) {
-    alert('Could not regenerate. Check your API connection.');
-  }
-  if(btn){ btn.disabled=false; btn.textContent='Re-generate'; }
+  }catch(e){ alert('Could not regenerate. Check API connection.'); }
+  document.getElementById('genOverlay').classList.remove('show');
+  if(btn){btn.disabled=false;btn.innerHTML='<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg> Re-generate';}
 }
 
-/* ─────────────────────────────────────────
-   Library render
-───────────────────────────────────────── */
+/* ── Library render ── */
 function renderList(){
   const list = document.getElementById('gameList');
   const empty = document.getElementById('emptyState');
   const filtered = LIBRARY.filter(g =>
-    activeF==='all' || activeF===g.type ||
-    (activeF==='high'&&g.demand==='high') ||
+    activeF==='all'||activeF===g.type||
+    (activeF==='high'&&g.demand==='high')||
     (activeF==='low'&&g.demand==='low')
   );
-  if(!filtered.length){ list.innerHTML=''; empty.style.display='block'; return; }
-  empty.style.display = 'none';
+  if(!filtered.length && document.getElementById('genRows').children.length===0){
+    list.innerHTML=''; empty.style.display='block'; return;
+  }
+  empty.style.display='none';
   list.innerHTML = filtered.map((g,i) => {
-    const art = makeArt(g.steamId, g.icon, 'gbar-art-img', 'ph');
     const dp = `<span class="demand-pill d${g.demand==='high'?'h':g.demand==='med'?'m':'l'}">${dlbl(g.demand)}</span>`;
-    const modeCount = g.modes ? Object.keys(g.modes).length : 0;
+    const fps = g.modes?.balanced?.fps||'—';
+    const readyDot = g.ready?'':`<span style="font-size:9px;color:var(--hint);font-family:'JetBrains Mono',monospace;margin-left:6px">generating…</span>`;
+    const artEl = g.image
+        ? `<div class="gbar-icon" style="padding:0;overflow:hidden"><img src="${g.image}" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.parentElement.textContent='🎮'"></div>`
+        : `<div class="gbar-icon">${g.icon}</div>`;
     return `<div class="gbar" onclick="openGame('${g.id}')" style="animation-delay:${i*0.04}s">
-      <div class="gbar-art">${art}</div>
+      ${artEl}
       <div class="gbar-info">
-        <div class="gbar-name">${g.name}</div>
-        <div class="gbar-meta">${g.genre} · ${modeCount} modes</div>
+        <div class="gbar-name">${g.name}${readyDot}</div>
+        <div class="gbar-meta">${g.genre} · 5 modes</div>
       </div>
-      <div class="gbar-right">${dp}<span class="mode-count"><b>${modeCount}</b> modes</span></div>
+      <div class="gbar-right">${dp}<span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--hint)"><b style="color:var(--ink2)">${fps}</b> fps</span></div>
     </div>`;
   }).join('');
 }
@@ -535,38 +556,32 @@ function setF(f,btn){
   renderList();
 }
 
-/* ─────────────────────────────────────────
-   Open game settings
-───────────────────────────────────────── */
+/* ── Open game ── */
 function openGame(id){
-  selGame = LIBRARY.find(g => g.id===id);
+  selGame = LIBRARY.find(g=>g.id===id);
   if(!selGame) return;
-  activeMode = 'balanced';
-  document.getElementById('libraryView').style.display = 'none';
+  activeMode='balanced';
+  document.getElementById('libraryView').style.display='none';
   document.getElementById('settingsView').classList.add('vis');
   renderSettings(selGame);
+  if(!selGame.ready) document.getElementById('genOverlay').classList.add('show');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function goBack(){
   document.getElementById('settingsView').classList.remove('vis');
-  document.getElementById('libraryView').style.display = 'block';
-  selGame = null;
-  renderList();
+  document.getElementById('libraryView').style.display='block';
+  document.getElementById('genOverlay').classList.remove('show');
+  selGame=null; renderList();
 }
 
-/* ─────────────────────────────────────────
-   Render settings
-───────────────────────────────────────── */
+/* ── Render settings ── */
 function renderSettings(g){
-  // Game header
-  const art = makeArt(g.steamId, g.icon, 'gh-art-img', 'ph');
   document.getElementById('ghEl').innerHTML =
-    `<div class="gh-art">${art}</div>
-     <div class="gh-info">
-       <div class="gh-name">${g.name}</div>
-       <div class="gh-meta">${g.genre} · ${g.type?.toUpperCase()||'GAME'} · ${dlbl(g.demand)} demand</div>
-     </div>
+    (g.image
+      ? `<div class="gh-icon" style="padding:0;overflow:hidden"><img src="${g.image}" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.parentElement.innerHTML='🎮'"></div>`
+      : `<div class="gh-icon">${g.icon}</div>`) +
+     `<div class="gh-info"><div class="gh-name">${g.name}</div><div class="gh-meta">${g.genre} · ${dlbl(g.demand)} demand · 5 play modes</div></div>
      <div class="gh-btns">
        <button class="btn-regen" id="regenBtn" onclick="regenGame('${g.id}')">
          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
@@ -576,20 +591,17 @@ function renderSettings(g){
        <button class="btn-back" onclick="goBack()">← Library</button>
      </div>`;
 
-  // Mode tabs
-  document.getElementById('modeTabs').innerHTML = MODES.map(m =>
+  document.getElementById('modeTabs').innerHTML = MODES.map(m=>
     `<button class="mtab${activeMode===m.key?' active':''}" onclick="switchMode('${g.id}','${m.key}')">
       <span class="mtab-icon">${m.icon}</span>
       <span class="mtab-label">${m.label}</span>
     </button>`
   ).join('');
 
-  // Mode detail
   renderModeDetail(g, activeMode);
 
-  // Overview grid
-  document.getElementById('overviewGrid').innerHTML = MODES.map(m => {
-    const md = g.modes?.[m.key];
+  document.getElementById('overviewGrid').innerHTML = MODES.map(m=>{
+    const md=g.modes?.[m.key];
     if(!md) return '';
     return `<div class="ov-card${activeMode===m.key?' active':''}" onclick="switchMode('${g.id}','${m.key}')">
       <div class="ov-icon">${m.icon}</div>
@@ -601,48 +613,28 @@ function renderSettings(g){
 }
 
 function switchMode(gameId, modeKey){
-  activeMode = modeKey;
+  activeMode=modeKey;
   renderSettings(LIBRARY.find(g=>g.id===gameId));
 }
 
 function renderModeDetail(g, modeKey){
-  const m = g.modes?.[modeKey];
-  const mdef = MODES.find(x=>x.key===modeKey);
-  if(!m || !mdef){
-    document.getElementById('modeDetail').innerHTML = '<div style="padding:20px;color:var(--hint)">No settings available for this mode.</div>';
-    return;
-  }
-  const bh = batteryHours(m.tdp);
-  document.getElementById('modeDetail').innerHTML = `
+  const m=g.modes?.[modeKey];
+  const mdef=MODES.find(x=>x.key===modeKey);
+  if(!m||!mdef){document.getElementById('modeDetail').innerHTML='';return;}
+  const bh=batteryHours(m.tdp);
+  document.getElementById('modeDetail').innerHTML=`
     <div class="mode-detail">
       <div class="md-header">
         <div class="md-left">
           <div class="md-icon">${mdef.icon}</div>
-          <div>
-            <div class="md-name">${mdef.label}</div>
-            <div class="md-desc">${mdef.desc}</div>
-          </div>
+          <div><div class="md-name">${mdef.label}</div><div class="md-desc">${mdef.desc}</div></div>
         </div>
-        <div>
-          <span class="md-fps-badge">${m.fps}</span><span class="md-fps-unit">fps target</span>
-        </div>
+        <div><span class="md-fps-badge">${m.fps}</span><span class="md-fps-unit">fps target</span></div>
       </div>
       <div class="md-grid">
-        <div class="md-stat">
-          <div class="ms-label">TDP Limit</div>
-          <div class="ms-value">${m.tdp}W</div>
-          <div class="ms-sub">Power draw</div>
-        </div>
-        <div class="md-stat">
-          <div class="ms-label">GPU Clock</div>
-          <div class="ms-value">${m.gpu}</div>
-          <div class="ms-sub">MHz</div>
-        </div>
-        <div class="md-stat">
-          <div class="ms-label">Battery est.</div>
-          <div class="ms-value">~${bh}h</div>
-          <div class="ms-sub">40Wh pack</div>
-        </div>
+        <div class="md-stat"><div class="ms-label">TDP Limit</div><div class="ms-value">${m.tdp}W</div><div class="ms-sub">Power draw</div></div>
+        <div class="md-stat"><div class="ms-label">GPU Clock</div><div class="ms-value">${m.gpu}</div><div class="ms-sub">MHz</div></div>
+        <div class="md-stat"><div class="ms-label">Battery est.</div><div class="ms-value">~${bh}h</div><div class="ms-sub">40Wh pack</div></div>
       </div>
       <div class="md-stability">
         <div class="stab-label"><span>Frame stability</span><span>${m.fpsSteady}%</span></div>
@@ -650,28 +642,16 @@ function renderModeDetail(g, modeKey){
       </div>
       <div class="md-settings">
         <div class="md-settings-grid">
-          <div class="ms-block">
-            <div class="msb-key">Resolution</div>
-            <div class="msb-val">${m.res}</div>
-          </div>
-          <div class="ms-block">
-            <div class="msb-key">Upscaling</div>
-            <div class="msb-val" style="font-size:11px">${m.scale}</div>
-          </div>
-          <div class="ms-block">
-            <div class="msb-key">Refresh Hz</div>
-            <div class="msb-val">${m.refresh}Hz</div>
-          </div>
-          <div class="ms-block">
-            <div class="msb-key">Frame Cap</div>
-            <div class="msb-val">${m.limit}fps</div>
-          </div>
+          <div class="ms-block"><div class="msb-key">Resolution</div><div class="msb-val">${m.res}</div></div>
+          <div class="ms-block"><div class="msb-key">Upscaling</div><div class="msb-val" style="font-size:11px">${m.scale}</div></div>
+          <div class="ms-block"><div class="msb-key">Refresh Hz</div><div class="msb-val">${m.refresh}Hz</div></div>
+          <div class="ms-block"><div class="msb-key">Frame Cap</div><div class="msb-val">${m.limit}fps</div></div>
         </div>
       </div>
       <div class="md-notes">💡 ${m.notes}</div>
       <div class="md-footer">
         <div class="md-bat">🔋 Est. battery: <b>~${bh} hours</b> at ${m.tdp}W TDP</div>
-        <div class="md-actions">
+        <div>
           <button class="btn-copy" onclick="copySettings('${g.id}','${modeKey}')">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
             Copy QAM settings
@@ -682,24 +662,14 @@ function renderModeDetail(g, modeKey){
 }
 
 function copySettings(gameId, modeKey){
-  const g = LIBRARY.find(x=>x.id===gameId);
-  const m = g?.modes?.[modeKey];
-  const mdef = MODES.find(x=>x.key===modeKey);
+  const g=LIBRARY.find(x=>x.id===gameId);
+  const m=g?.modes?.[modeKey];
+  const mdef=MODES.find(x=>x.key===modeKey);
   if(!m) return;
-  const text = `${g.name} — ${mdef.label}
-TDP: ${m.tdp}W
-GPU Clock: ${m.gpu}MHz
-Resolution: ${m.res}
-Upscaling: ${m.scale}
-Refresh: ${m.refresh}Hz
-Frame cap: ${m.limit}fps
-Tip: ${m.notes}`;
-  navigator.clipboard ? navigator.clipboard.writeText(text).then(()=>alert('Copied to clipboard!')) : prompt('Copy:', text);
+  const text=`${g.name} — ${mdef.label}\nTDP: ${m.tdp}W\nGPU Clock: ${m.gpu}MHz\nResolution: ${m.res}\nUpscaling: ${m.scale}\nRefresh: ${m.refresh}Hz\nFrame cap: ${m.limit}fps\nTip: ${m.notes}`;
+  navigator.clipboard?navigator.clipboard.writeText(text).then(()=>alert('Copied!')):prompt('Copy:',text);
 }
 
-/* ─────────────────────────────────────────
-   Init
-───────────────────────────────────────── */
 renderList();
 </script>
 </body>
